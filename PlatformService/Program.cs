@@ -12,6 +12,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(
     opt => opt.UseInMemoryDatabase("InMem"));
 
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 // Dependency injection
 builder.Services.AddScoped<IPlatformRepo, PlatformRepo>();
 
